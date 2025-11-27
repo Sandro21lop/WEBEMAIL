@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email Marketing Inteligente</title>
+
+<!-- Fuente -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ------------------------- */
+/* ESTILOS GLOBAL            */
+/* ------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1e1e2f, #2b0f50, #0d0d18);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* ------------------------- */
+/* HEADER HERO               */
+/* ------------------------- */
+header {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3.6em;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffdd57, #ff76e1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 1.3em;
+    opacity: 0.8;
+}
+
+/* ------------------------- */
+/* CONTENEDOR PRINCIPAL      */
+/* ------------------------- */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 22px;
+    padding: 40px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.45);
+    animation: fadeIn 1s ease;
+}
+
+/* Animación entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------------- */
+/* IMAGEN PRINCIPAL          */
+/* ------------------------- */
+.main-image {
+    width: 100%;
+    height: 380px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 10px 35px rgba(0,0,0,0.5));
+    transition: .3s;
+}
+
+.main-image:hover {
+    transform: scale(1.01);
+}
+
+/* ------------------------- */
+/* GALERÍA                   */
+/* ------------------------- */
+.gallery {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.gallery img {
+    width: 180px;
+    height: 120px;
+    border-radius: 15px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 2px solid transparent;
+}
+
+.gallery img:hover {
+    transform: scale(1.07);
+    border-color: #ffdd57;
+}
+
+/* ------------------------- */
+/* DESCRIPCIÓN               */
+/* ------------------------- */
+.description {
+    margin-top: 25px;
+    font-size: 1.15em;
+    line-height: 1.7;
+}
+
+/* ------------------------- */
+/* PRECIO                    */
+/* ------------------------- */
+.price-card {
+    margin-top: 40px;
+    padding: 25px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 0 25px rgba(255,255,255,0.1);
+}
+
+.price-card h2 {
+    font-size: 2.4em;
+    color: #ffdd57;
+}
+
+.price-card p {
+    opacity: 0.8;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, #ffdd57, #ff76e1);
+    color: black;
+    text-align: center;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 1.3em;
+    margin-top: 20px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: .3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.04);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* ------------------------- */
+/* VIDEO MOCKUP 3D           */
+/* ------------------------- */
+.video-container {
+    margin-top: 50px;
+}
+
+.mockup {
+    width: 100%;
+    margin: auto;
+    transform: perspective(800px) rotateX(4deg);
+    transition: .3s;
+}
+
+.mockup:hover {
+    transform: perspective(800px) rotateX(0deg) scale(1.02);
+}
+
+iframe {
+    width: 100%;
+    height: 380px;
+    border: none;
+    border-radius: 20px;
+}
+
+/* ------------------------- */
+/* BOTÓN FLOTANTE WHATSAPP   */
+/* ------------------------- */
+.whatsapp-btn {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    background: #25D366;
+    padding: 15px;
+    border-radius: 50%;
+    color: white;
+    font-size: 28px;
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    animation: float 3s infinite ease-in-out;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes float {
+    0% {transform: translateY(0)}
+    50% {transform: translateY(-6px)}
+    100% {transform: translateY(0)}
+}
+
+/* ------------------------- */
+/* RESPONSIVE                */
+/* ------------------------- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+    
+    .gallery img {
+        width: 140px;
+        height: 90px;
+    }
+    
+    .price-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Email Marketing Inteligente</h1>
+    <p>Automatizado • Seguro • Humano • Sin bloqueos</p>
+</header>
+
+<div class="container">
+
+   <!-- Imagen Principal -->
+    <div id="mainImage" class="main-image"
+         style="background-image: url('img/captura1.png');"></div>
+
+    <!-- Galería -->
+    <div class="gallery">
+        <img src="img/captura1.png" alt="Dashboard" onclick="changeImage(this.src)">
+        <img src="img/captura2.png" alt="Envío Masivo" onclick="changeImage(this.src)">
+        <img src="img/captura3.png" alt="Reportes" onclick="changeImage(this.src)">
+        <img src="img/captura4.png" alt="Plantillas" onclick="changeImage(this.src)">
+    </div>
+    <!-- Descripción -->
+    <p class="description">
+        ✓ Hasta 500 correos diarios sin bloqueos <br>
+        ✓ Envío progresivo con simulación humana <br>
+        ✓ Evita bandeja de spam automáticamente <br>
+        ✓ Panel de control intuitivo <br>
+        ✓ Importa contactos desde Excel <br>
+        ✓ Demo gratuita disponible <br>
+        ✓ Personaliza el mensaje una vez y se envia automaticamente <br><br>
+
+        Conecta tu cuenta de email y comienza a enviar campañas masivas
+        de forma segura, sin riesgo de bloqueo. Nuestro sistema simula
+        comportamiento humano para máxima deliverabilidad.
+    </p>
+
+    <!-- Precio -->
+    <div class="price-card">
+        <h2>Planes Flexibles</h2>
+        <div class="price-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 25px;">
+            <div style="padding: 20px; background: rgba(255,255,255,0.08); border-radius: 15px; border: 2px solid rgba(255,221,87,0.3);">
+                <h3 style="color: #ffdd57; margin-bottom: 10px;">Mensual</h3>
+                <p style="font-size: 2.2em; font-weight: 700; color: #fff;">$5</p>
+                <p style="opacity: 0.8; font-size: 0.95em;">por mes</p>
+                <a class="btn" style="margin-top: 15px; font-size: 1.1em;" href="https://wa.me/593963615550?text=Hola%20quiero%20el%20plan%20mensual%20de%20Email%20Marketing%20por%20$5">
+                    Elegir Plan 📧
+                </a>
+            </div>
+            <div style="padding: 20px; background: rgba(255,118,225,0.15); border-radius: 15px; border: 2px solid #ff76e1; position: relative;">
+                <span style="position: absolute; top: -12px; right: 15px; background: #ff76e1; color: black; padding: 5px 15px; border-radius: 20px; font-size: 0.85em; font-weight: 700;">⭐ Mejor Oferta</span>
+                <h3 style="color: #ff76e1; margin-bottom: 10px;">Permanente</h3>
+                <p style="font-size: 2.2em; font-weight: 700; color: #fff;">$50</p>
+                <p style="opacity: 0.8; font-size: 0.95em;">10 años incluidos</p>
+                <a class="btn" style="margin-top: 15px; font-size: 1.1em;" href="https://wa.me/593963615550?text=Hola%20quiero%20el%20plan%20permanente%20de%20Email%20Marketing%20por%20$50">
+                    Elegir Plan 🚀
+                </a>
+            </div>
+        </div>
+        <p style="margin-top: 20px; opacity: 0.8;">Incluye soporte técnico, actualizaciones y acceso completo</p>
+        
+        <!-- Botón Activar Licencia -->
+        <a class="btn btn-secondary" style="margin-top: 25px; font-size: 1.15em;" href="https://wa.me/593963615550?text=Hola%20necesito%20activar%20mi%20licencia%20de%20Email%20Marketing">
+            🔑 Activar Licencia - Contactar Creador
+        </a>
+    </div>
+
+    <!-- Demo Section -->
+    <div class="demo-section" style="margin-top: 50px; padding: 35px; background: rgba(255,221,87,0.1); border-radius: 20px; border: 2px dashed rgba(255,221,87,0.4);">
+        <h2 style="text-align: center; margin-bottom: 20px; color: #ffdd57;">🎯 Prueba la Demo Gratis</h2>
+        <p style="text-align: center; margin-bottom: 25px; opacity: 0.9;">
+            Accede a nuestra carpeta de ejemplo y prueba el sistema sin compromiso
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: 0 auto;">
+            <a href="https://drive.google.com/drive/folders/1yQe1gdpsrenG2S_l-8rP5BS7zvyfH37s?usp=sharing" 
+               target="_blank"
+               style="padding: 18px; border-radius: 12px; background: linear-gradient(135deg, #ffdd57, #ff76e1); border: none; font-size: 1.2em; font-weight: 700; cursor: pointer; transition: 0.3s; color: black; text-decoration: none; text-align: center; display: block;" 
+               onmouseover="this.style.transform='scale(1.03)'" 
+               onmouseout="this.style.transform='scale(1)'">
+                📂 Acceder a Demo de Google Drive 🚀
+            </a>
+        </div>
+        <p style="text-align: center; margin-top: 20px; font-size: 0.9em; opacity: 0.7;">
+            * Descarga el archivo de ejemplo y prueba el envío masivo
+        </p>
+    </div>
+
+
+<!-- Botón WhatsApp -->
+<a class="whatsapp-btn" href="https://wa.me/593963615550?text=Hola%20tengo%20una%20consulta%20sobre%20Email%20Marketing">💬</a>
+
+<script>
+function changeImage(src) {
+    document.getElementById("mainImage").style.backgroundImage = `url('${src}')`;
+}
+</script>
+
+</body>
+</html>
